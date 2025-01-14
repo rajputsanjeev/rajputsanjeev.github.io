@@ -210,7 +210,37 @@
     transform: scale(1.1);
     background: rgba(255, 255, 255, 0.2);
 }
+       /* Contact Icons */
+        .contact ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 0;
+        }
 
+        .contact ul li a {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.2s ease-in-out, background 0.3s;
+        }
+
+        .contact ul li a:hover {
+            transform: scale(1.1);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .contact ul li a img {
+            width: 24px;
+            height: 24px;
+        }
         /* Footer */
         footer {
             background-color: rgba(34, 34, 34, 0.8);
@@ -298,6 +328,16 @@
         </div>
 
     </section>
+
+       <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <h2>Contact</h2>
+            <ul>
+                <li><a href="https://rajputsanjeev738@gmail.com"><img src="email-icon.png" alt="Email"></a></li>
+                <li><a href="https://linkedin.com/in/yourprofile" target="_blank"><img src="linkedin-icon.png" alt="LinkedIn"></a></li>
+                <li><a href="https://github.com/yourusername" target="_blank"><img src="github-icon.png" alt="GitHub"></a></li>
+            </ul>
+        </section>
 
     <!-- Footer -->
     <footer>
