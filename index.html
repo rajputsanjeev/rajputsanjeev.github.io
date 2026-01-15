@@ -1,345 +1,400 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Roboto', sans-serif;
-            background: #0f0f0f;
-            color: #fff;
-            overflow-x: hidden;
-        }
-        header {
-            text-align: center;
-            padding: 50px 20px;
-            background: #121212;
-        }
-        header h1 {
-            font-size: 3rem;
-            margin: 0;
-            color: #ff007a;
-            text-shadow: 0 0 10px #ff007a, 0 0 20px #ff4d94;
-        }
-        header p {
-            margin-top: 10px;
-            font-size: 1.2rem;
-            color: #aaa;
-        }
-        .particles {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-        }
-        @keyframes float {
-            0% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
-            100% { transform: translateY(0); }
-        }
-        .particle {
-            position: absolute;
-            background: #ff007a;
-            border-radius: 50%;
-            opacity: 0.7;
-            animation: float 5s ease-in-out infinite;
-        }
-         /* About Section */
-        #about {
-            margin: 2rem auto;
-            padding: 2rem;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            max-width: 900px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sanjeev Rajput | Game Developer</title>
 
-        #about img {
-            display: block;
-            margin: 0 auto 1rem;
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
-        #about p {
-            text-align: justify;
-            line-height: 1.6;
-            margin: 0 1rem;
-        }
-
-        .projects {
-            padding: 50px 20px;
-            background: #1a1a1a;
-        }
-        .projects h2 {
-            text-align: center;
-            color: #ff007a;
-            margin-bottom: 20px;
-        }
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .project {
-            background: #222;
-            border: 1px solid #333;
-            border-radius: 8px;
-            padding: 20px;
-            text-align: center;
-        }
-        .project img {
-            width: 100%;
-            border-radius: 8px;
-        }
-        .project h3 {
-            margin: 10px 0;
-            color: #fff;
-        }
-        .project p {
-            color: #aaa;
-            font-size: 0.9rem;
-        }
-        .project a {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 10px 20px;
-            color: #fff;
-            background: #ff007a;
-            border-radius: 5px;
-            text-decoration: none;
-            transition: background 0.3s;
-        }
-        .project a:hover {
-            background: #ff4d94;
-        }
-
-        .project-buttons a {
-    display: circle;
-    width: 30px; /* Slightly larger buttons for better visibility */
-    height: 30px; /* Match width for perfect circle */
-    border-radius: 25%;
-    background: rgba(255, 255, 255, 0.1);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    align-items: center; /* Vertical centering */
-    justify-content: center; /* Horizontal centering */
-    overflow: hidden; /* Prevent image overflow */
-    position: relative; /* For consistent alignment */
-    transition: transform 0.2s ease-in-out, background 0.3s;
+<style>
+:root {
+    --bg-main:#0b0f14;
+    --bg-section:#0f172a;
+    --card:#111827;
+    --accent:#3b82f6;
+    --text:#e5e7eb;
+    --muted:#9ca3af;
+    --border:#1f2937;
 }
 
-.project-buttons a img {
-    width: 100%;
-    height: 100%;
-     object-fit: cover;
-}   
+*{box-sizing:border-box;}
+img{display:block;max-width:100%;}
 
-.project-buttons a:hover {
-    transform: scale(1.1);
-    background: rgba(255, 255, 255, 0.2);
+body{
+    margin:0;
+    font-family:'Inter',sans-serif;
+    background:var(--bg-main);
+    color:var(--text);
 }
-        .contact {
-            padding: 50px 20px;
-            text-align: center;
-            background: #121212;
-        }
-        .contact h2 {
-            color: #ff007a;
-            margin-bottom: 20px;
-        }
-        .contact form {
-            max-width: 500px;
-            margin: 0 auto;
-        }
-        .contact input, .contact textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 20px;
-            border: 1px solid #333;
-            border-radius: 5px;
-            background: #1a1a1a;
-            color: #fff;
-        }
-        .contact button {
-            background: #ff007a;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-        .contact button:hover {
-            background: #ff4d94;
-        }
 
-           /* Contact Icons */
-        .contact ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            padding: 0;
-        }
+/* HEADER */
+header{
+    text-align:center;
+    padding:80px 20px 60px;
+}
+header h1{font-size:3rem;margin:0;}
+header p{color:var(--muted);margin-top:10px;}
 
-        .contact ul li a {
-            display: inline-block;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.1);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: transform 0.2s ease-in-out, background 0.3s;
-        }
+/* SECTIONS */
+section{
+    padding:80px 20px;
+    display:none;
+}
+section.active{
+    display:block;
+}
 
-        .contact ul li a:hover {
-            transform: scale(1.1);
-            background: rgba(255, 255, 255, 0.2);
-        }
+.container{max-width:1150px;margin:auto;}
+h2{text-align:center;margin-bottom:50px;font-size:2.2rem;}
 
-        .contact ul li a img {
-            width: 24px;
-            height: 24px;
-        }
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: #1a1a1a;
-            color: #aaa;
-        }
-        footer a {
-            color: #ff007a;
-            text-decoration: none;
-            margin: 0 10px;
-            transition: color 0.3s;
-        }
-        footer a:hover {
-            color: #ff4d94;
-        }
-    </style>
+/* ABOUT */
+#about{
+    background:linear-gradient(180deg,#020617,#0f172a);
+}
+.about-grid{
+    display:grid;
+    grid-template-columns:160px 1fr;
+    gap:40px;
+    align-items:flex-start;
+}
+.profile{
+    width:160px;
+    height:160px;
+    border-radius:50%;
+    border:3px solid var(--accent);
+    object-fit:cover;
+}
+#about p{
+    color:var(--muted);
+    line-height:1.7;
+    margin-bottom:14px;
+}
+.about-icons{
+    margin-top:22px;
+    display:flex;
+    gap:14px;
+}
+.about-icons a{
+    width:44px;
+    height:44px;
+    border-radius:50%;
+    background:rgba(255,255,255,0.08);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition:.3s;
+}
+.about-icons a:hover{
+    background:var(--accent);
+    transform:translateY(-4px);
+}
+.about-icons img{
+    width:22px;
+    height:22px;
+}
+
+/* SKILLS */
+.skills-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:25px;
+}
+.skill-card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:16px;
+    padding:22px;
+}
+.skill-card h3{
+    margin-bottom:10px;
+    color:var(--accent);
+}
+.skill-card p{
+    color:var(--muted);
+    font-size:.95rem;
+}
+
+/* PROJECTS */
+.project-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+.project{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:16px;
+    padding:20px;
+}
+.project img{
+    width:100%;
+    border-radius:12px;
+}
+.project h3{
+    margin:14px 0 8px;
+}
+.project p{
+    color:var(--muted);
+    font-size:.95rem;
+}
+
+/* RESUME */
+.resume-box{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:16px;
+    padding:30px;
+}
+.resume-section{
+    margin-bottom:30px;
+}
+.resume-section h3{
+    color:var(--accent);
+}
+.resume-section p,
+.resume-section li{
+    color:var(--muted);
+    font-size:.95rem;
+}
+.resume-section ul{
+    padding-left:18px;
+}
+
+/* NAV */
+.bottom-nav{
+    position:fixed;
+    bottom:0;
+    left:0;
+    width:100%;
+    background:#020617;
+    border-top:1px solid var(--border);
+    display:flex;
+    justify-content:center;
+    gap:50px;
+    padding:12px 0;
+    z-index:999;
+}
+.bottom-nav button{
+    background:none;
+    border:none;
+    color:var(--muted);
+    font-size:.9rem;
+    cursor:pointer;
+}
+.bottom-nav button.active{
+    color:var(--accent);
+    font-weight:600;
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    color:var(--muted);
+    padding:40px 20px 90px;
+    font-size:.85rem;
+}
+</style>
 </head>
+
 <body>
-    <header>
-        <h1>Sanjeev Rajput</h1>
-        <div class="particles">
-            <!-- Particles will be dynamically generated here -->
-        </div>
-    </header>
 
-    <!-- About Section -->
-    <section id="about">
-        <img src="profile.jpg" alt="Profile Picture">
-        <p>
-            Accomplished Game Developer with extensive expertise in designing and developing games using Unity and Unreal Engine across both 2D and 3D environments. Demonstrates a strong foundation in game development principles, coupled with in-depth knowledge of AR and VR technologies, to craft immersive and cutting-edge experiences. Proficient in utilizing SDL2, SFML, GLFW, and OpenGL to build games from the ground up without relying on game engines.
-        </p>
-        <p>
-            Successfully contributed to diverse, high-impact game projects, collaborating with multidisciplinary teams to consistently deliver exceptional results. Driven by a passion for pushing the boundaries of interactive entertainment, leveraging AR and VR technologies to create transformative experiences that captivate users and transport them to new worlds.
-        </p>
-    </section>
+<header>
+<h1>Sanjeev Rajput</h1>
+<p>Senior Game Developer · Unity & Unreal · AR/VR · Multiplayer</p>
+</header>
 
-    <section class="projects">
-        <h2>Projects</h2>
-        <div class="project-grid">
+<!-- ABOUT -->
+<section id="about" class="active">
+<div class="container about-grid">
+<img src="profile.jpg" class="profile">
 
-            <div class="project 1">
-                 <img src="TD.png" alt="TD">
-                <h3>Vulcan's Tower Defense</h3>
-                <p>Defeat the advancing hordes in this real-time strategic blockchain game, earning XP as you progress! The enemies of Vulcan march on, raiding, pillaging, and destroying VulcanVerse. How long can you last out - how much XP will you score?</p>
-                <div class="project-buttons">
-            <a href="https://play.google.com/store/apps/details?id=com.vulcanforged.VulcanTowerDefense&hl=en&gl=US" target="_blank"><img src="playstore-icon.png" alt="Play Store"></a>
-            <a href="https://apps.apple.com/in/app/vulcans-tower-defense/id1658249651" target="_blank"><img src="applestore-icon.png" alt="Apple Store"></a>
-            <a href="https://drive.google.com/file/d/1NWsaAveS5PjISxwGfA94fBoJPKvP7oDy/view?usp=sharing" target="_blank"><img src="Video.jpg" alt="Website"></a>
-        </div>
-            </div>
+<div>
+<p>Senior Game Developer with 6+ years of experience delivering production-ready games and immersive applications.</p>
+<p>Expertise in gameplay systems, multiplayer architecture, AR/VR, and performance optimization.</p>
+<p>Worked on blockchain games, medical visualization software, RPGs, and VR simulations.</p>
 
-            <div class="project 2">
-               <img src="BlockBabies.png" alt="BlockBabies">
-                <h3>Block Babies</h3>
-                <p>Block Babies is a decentralized gaming experience rife with card tactics, PvP battles, and multiple game modes. Playing the host to several cute little digital babies, this foray of Vulcan Forged has been nothing but a sweet ride into the wonders of the blockchain gaming world. As you explore, you meet and nurture a growing nursery of NFT babies and items designed to help you unravel their world where the RPG elements of Block Babies shine through in the quests you set your kids on, and the battles against ranked foes inch you closer to unleashing your entire force.</p>
-            <div class="project-buttons">
-            <a href="https://www.blockbabies.world/" target="_blank"><img src="playstore-icon.png" alt="Play Store"></a>
-            <a href="https://drive.google.com/file/d/1NWsaAveS5PjISxwGfA94fBoJPKvP7oDy/view?usp=sharing" target="_blank"><img src="Video.jpg" alt="Website"></a>
-        </div>
-            </div>
+<div class="about-icons">
+<a href="mailto:rajputsanjeev738@gmail.com"><img src="email-icon.png"></a>
+<a href="https://www.linkedin.com/in/sanjeev-rajput-6b164a140/" target="_blank"><img src="linkedin-icon.png"></a>
+<a href="https://github.com/rajputsanjeev" target="_blank"><img src="github-icon.png"></a>
+</div>
+</div>
+</div>
+</section>
 
-            <div class="project 3">
-                  <img src="TriggerPoint.png" alt="TriggerPoint">
-                <h3>Trigger Points 3D</h3>
-                <p>Trigger Point 3D is the most powerful and advanced trigger point software on the market. Used by educational institutions this trigger point software has been developed in conjunction with Neurologist Dr. Bob Gerwin MD, a �founding father� of the trigger point movement and Osteopath Simeon Niel-Asher, Author of �The Concise Book of Trigger Points</p>
-               <div class="project-buttons">
-            <a href="https://play.google.com/store/apps/details?id=com.simeon.tps&hl=en_IN" target="_blank"><img src="playstore-icon.png" alt="Play Store"></a>
-                 <a href="https://apps.apple.com/us/app/triggerpoints3d/id1453498126" target="_blank"><img src="applestore-icon.png" alt="Apple Store"></a>
-            <a href="https://www.youtube.com/watch?v=mndb6u_mYEQ" target="_blank"><img src="Video.jpg" alt="Website"></a>
-        </div>
-            </div>
+<!-- SKILLS -->
+<section id="skills">
+<div class="container">
+<h2>Skills</h2>
+<div class="skills-grid">
+<div class="skill-card"><h3>Engines</h3><p>Unity, Unreal, Godot</p></div>
+<div class="skill-card"><h3>Programming</h3><p>C#, C++, GDScript, Blueprints</p></div>
+<div class="skill-card"><h3>Multiplayer</h3><p>Photon PUN 2, Fusion</p></div>
+<div class="skill-card"><h3>AR / VR</h3><p>Vuforia, AR Foundation, Oculus</p></div>
+<div class="skill-card"><h3>Backend</h3><p>Firebase, PlayFab, Git</p></div>
+</div>
+</div>
+</section>
 
-              <div class="project 4">
-                <img src="Sinverse.png" alt="Sinverse">
-                <h3>Sinverse</h3>
-                <p>SinVerse is the ultimate multiplayer game for fans of Mafia games who want an even more immersive and interactive experience. In SinVerse, you'll join a thriving player-run economy where every decision you make can make or break your criminal empire. Rise to the top and become the ultimate kingpin, building a criminal empire that's the envy of your rivals. But beware - in SinVerse, danger lurks around every corner, and you'll need to be smart, ruthless, and cunning to survive.</p>
-             <div class="project-buttons">
-            <a href="https://www.blockbabies.world/" target="_blank"><img src="playstore-icon.png" alt="Play Store"></a>
-            <a href="https://drive.google.com/file/d/1NWsaAveS5PjISxwGfA94fBoJPKvP7oDy/view?usp=sharing" target="_blank"><img src="Video.jpg" alt="Website"></a>
-        </div>
-            </div>
+<!-- PROJECTS -->
+<section id="projects">
+<div class="container">
+<h2>Projects</h2>
+<div class="project-grid">
+<div class="project"><img src="TD.png"><h3>Vulcan’s Tower Defense</h3><p>Blockchain tower defense game.</p></div>
+<div class="project"><img src="BlockBabies.png"><h3>Block Babies</h3><p>Decentralized RPG.</p></div>
+<div class="project"><img src="TriggerPoint.png"><h3>Trigger Points 3D</h3><p>Medical 3D visualization.</p></div>
+<div class="project"><img src="Sinverse.png"><h3>SinVerse</h3><p>Multiplayer RPG.</p></div>
+<div class="project"><img src="Tile.png"><h3>Tile Task</h3><p>Mobile puzzle game.</p></div>
+<div class="project"><img src="VR.png"><h3>VR Experiences</h3><p>VR training apps.</p></div>
+</div>
+</div>
+</section>
 
-             <div class="project 1">
-                 <img src="Tile.png" alt="TD">
-                <h3>Tile Task - Match Puzzle Game</h3>
-                <div class="project-buttons">
-            <a href="https://play.google.com/store/apps/details?id=com.manugames.tileandtask&hl=en_IN" target="_blank"><img src="playstore-icon.png" alt="Play Store"></a>
-        </div>
-            </div>
-            
-            <div class="project 5">
-                 <img src="VR.png" alt="TD">
-                <h3>VR Videos</h3>
-                <div class="project-buttons">
-            <a href="https://drive.google.com/drive/folders/1TM-iNsPWT5UiF6NvKwFCVDRTaz4_8a-G?usp=sharing" target="_blank"><img src="Video.jpg" alt="Website"></a>
-        </div>
-            </div>
+<<!-- RESUME -->
+<section id="resume">
+<div class="container">
+<h2>Resume</h2>
+
+<div class="resume-box">
+
+<!-- HEADER -->
+<div class="resume-section">
+<h3>Sanjeev Rajput</h3>
+<p>
+<strong>Team Lead | Unity Developer</strong><br>
+📍 Chandigarh, India · 📞 +91 95018-55027<br>
+✉️ rajputsanjeev738@gmail.com<br>
+<a href="https://www.linkedin.com/in/sanjeev-rajput-6b164a140/" target="_blank">LinkedIn</a> |
+<a href="https://github.com/rajputsanjeev" target="_blank">GitHub</a> |
+<a href="#" target="_blank">Portfolio</a>
+</p>
+</div>
+
+<!-- TECHNICAL SKILLS -->
+<div class="resume-section">
+<h3>Technical Skills</h3>
+<ul>
+<li><strong>Programming:</strong> C#, C++, GDScript</li>
+<li><strong>Engines / Frameworks:</strong> Unity, Unreal Engine, Godot</li>
+<li><strong>Frontend:</strong> Unity UI</li>
+<li><strong>Backend:</strong> Firebase, PlayFab</li>
+<li><strong>Multiplayer:</strong> Photon PUN 2, Photon Fusion</li>
+<li><strong>AR / VR:</strong> Oculus, Vuforia, Unity AR Foundation</li>
+<li><strong>Libraries & Systems:</strong> Addressables, Asset Bundles, NavMesh, State Machines, ScriptableObjects, Object Pooling, Behavior Trees, RPCs</li>
+<li><strong>Tools:</strong> Git</li>
+<li><strong>Platforms:</strong> Android, iOS, PC, Console, Oculus</li>
+<li><strong>Methodologies:</strong> Agile, Scrum</li>
+</ul>
+</div>
+
+<!-- EXPERIENCE -->
+<div class="resume-section">
+<h3>Professional Experience (6+ Years)</h3>
+
+<p><strong>Team Lead</strong> | Six Red Marbles, Chennai (Apr 2024 – Present)</p>
+<ul>
+<li>Led and mentored Unity developers delivering VR applications for Oculus and PC.</li>
+<li>Architected scalable Unity systems, improving performance and maintainability.</li>
+<li>Increased on-time delivery by 70% through improved planning and prioritization.</li>
+<li>Boosted frame stability by 80% via optimization and profiling.</li>
+<li>Improved user retention by 18% through feature refinements.</li>
+<li>Collaborated directly with clients, increasing satisfaction by 80%.</li>
+</ul>
+
+<p><strong>Senior Unity Developer</strong> | EDIIIE (Kompanions), Mohali (Jun 2021 – Nov 2023)</p>
+<ul>
+<li>Built cross-platform 3D games for mobile and console.</li>
+<li>Implemented multiplayer systems with matchmaking and synchronization.</li>
+<li>Integrated Firebase, PlayFab, Google & Facebook SDKs.</li>
+<li>Improved FPS and gameplay latency through C# optimizations.</li>
+<li>Automated build pipelines, reducing manual work by 90%.</li>
+</ul>
+
+<p><strong>Junior Unity Developer</strong> | App Mechanic, Mohali (Jan 2019 – Mar 2021)</p>
+<ul>
+<li>Delivered automation-focused projects within timelines.</li>
+<li>Improved stability by 30% through bug fixing and optimization.</li>
+<li>Supported feature development and release cycles.</li>
+</ul>
+</div>
+
+<!-- PROJECTS -->
+<div class="resume-section">
+<h3>Key Projects</h3>
+
+<ul>
+<li><strong>eGreta</strong> – Unity | French Ministry of Education  
+Interactive 3D simulations for education; increased engagement by 90%.</li>
+
+<li><strong>Vulcan Tower Defence</strong> – Unity | Vulcan Forged  
+Improved frame stability by 70% and reduced load times using Addressables.</li>
+
+<li><strong>SinVerse</strong> – Unity | Multiplayer RPG  
+Reduced network desync by 50% and improved session length.</li>
+
+<li><strong>Block Babies</strong> – Unity | Blockchain RPG  
+NFT-based PvP RPG with ranked matchmaking and progression systems.</li>
+
+<li><strong>Vulcan Runner</strong> – Unreal | Android  
+Endless runner increasing DAU by 20% through gameplay tuning.</li>
+
+<li><strong>TriggerPoint3D</strong> – Unity  
+Medical-grade 3D anatomy visualization tool.</li>
+
+<li><strong>AR GPS Location-Based Game</strong> – Unity  
+Mapbox-based AR gameplay with optimized battery usage.</li>
+</ul>
+</div>
+
+<!-- EDUCATION -->
+<div class="resume-section">
+<h3>Education</h3>
+<p><strong>B.Tech in Computer Engineering</strong><br>
+Rayat Bahra University, Mohali · 2019</p>
+</div>
+
+<!-- ACHIEVEMENTS -->
+<div class="resume-section">
+<h3>Achievements</h3>
+<ul>
+<li>EDIIIE – Stand Out Player of the Year</li>
+<li>App Mechanic – Employee of the Month</li>
+</ul>
+</div>
+
+</div>
+</div>
+</section>
 
 
-        </div>
-    </section>
-     <!-- Contact Section -->
-        <section id="contact" class="contact">
-            <h2>Contact</h2>
-            <ul>
-                <li><a href="https://rajputsanjeev738@gmail.com"><img src="email-icon.png" alt="Email"></a></li>
-                <li><a href="https://www.linkedin.com/in/sanjeev-rajput-6b164a140/" target="_blank"><img src="linkedin-icon.png" alt="LinkedIn"></a></li>
-                <li><a href="https://github.com/rajputsanjeev" target="_blank"><img src="github-icon.png" alt="GitHub"></a></li>
-            </ul>
-        </section>
+<footer>© 2026 Sanjeev Rajput · Game Developer Portfolio</footer>
 
-    <footer>
-        <p>
-        </p>
-    </footer>
-</body>
+<!-- NAV -->
+<div class="bottom-nav">
+<button class="active" onclick="showTab('about',this)">About</button>
+<button onclick="showTab('skills',this)">Skills</button>
+<button onclick="showTab('projects',this)">Projects</button>
+<button onclick="showTab('resume',this)">Resume</button>
+</div>
+
 <script>
-    // Generate dynamic particles
-    const particleContainer = document.querySelector('.particles');
-    for (let i = 0; i < 50; i++) {
-        const particle = document.createElement('div');
-        const size = Math.random() * 5 + 3;
-        const duration = Math.random() * 5 + 2;
-        const left = Math.random() * 100;
-        particle.classList.add('particle');
-        particle.style.width = `${size}px`;
-        particle.style.height = `${size}px`;
-        particle.style.left = `${left}%`;
-        particle.style.animationDuration = `${duration}s`;
-        particleContainer.appendChild(particle);
-    }
+function showTab(id, btn) {
+    document.querySelectorAll("section").forEach(section => {
+        section.classList.remove("active");
+    });
+
+    document.getElementById(id).classList.add("active");
+
+    document.querySelectorAll(".bottom-nav button").forEach(button => {
+        button.classList.remove("active");
+    });
+
+    btn.classList.add("active");
+    window.scrollTo(0, 0);
+}
 </script>
+
+</body>
 </html>
